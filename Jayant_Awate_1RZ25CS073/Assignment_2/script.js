@@ -8,11 +8,12 @@ add_btn.addEventListener("click",()=>{
       to_do.className="task";
       to_do.innerHTML=`<div class="task">
                               <span>${task}</span>
-                              <button class="btn" >Done</button>
+                              <button class="btn">Done</button>
                         </div>`;
-      to_do.querySelector(".btn").addEventListener("click",()=>{
-                        to_do.remove();
-      })
+      to_do.querySelector(".btn").addEventListener("click",deletetask);
       task_lists.append(to_do);
       task_name.value="";
 });
+function deletetask(){
+      this.parentElement.remove();
+}
